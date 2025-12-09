@@ -15,14 +15,17 @@ To successfully reproduce the issue, you must separate the **Build Environment**
 
 #### Step 1: Build RestAssured Core (The "Whole Ox")
 
+First, clone and build the latest RestAssured version to install the snapshots locally.
+
 ⚠️ **Critical:** Switch to **JDK 17** for this step.
 
 ```bash
-# 1. Activate JDK 17 (Required for building RestAssured)
-sdk use java 17.0.17-tem 
+# 1. Activate JDK 17 (Use your installed version, e.g., 17.0.11-tem)
+sdk use java <your-java-17-version> 
 
-# 2. Navigate to your local rest-assured repository
-cd [path/to/rest-assured]
+# 2. Clone the official repository
+git clone https://github.com/rest-assured/rest-assured.git
+cd rest-assured
 
 # 3. Clean and build the full reactor project
 mvn clean install -DskipTests
@@ -33,24 +36,26 @@ mvn clean install -DskipTests
 After building the core, you can switch to JDK 25 (optional, but recommended for full simulation) to run the matrix.
 
 ```bash
-# Activate JDK 25 (Target Runtime for Spring Boot 4)
-sdk use java 25.0.1-open
+# Activate JDK 25 - Target Runtime for Spring Boot 4. (Use your installed version, e.g., 25.0.1-open)
+sdk use java <your-java-25-version>
 
 ```
 ### 2. Running the Compatibility Matrix
-The matrix.sh script will automatically run the two isolated scenarios using the locally built 5.5.7-SNAPSHOT JAR.
+Clone this reproduction repository and execute the driver script.
 
-Execution Script
-
-To run the compatibility matrix, follow the steps below:
-
-2.1.  **Grant Execution Permission:** 
+Execution Steps
+1. **Clone the Repository:**
+```bash
+git clone https://github.com/spencerarq/ra-compat-matrix.git
+cd ra-compat-matrix
+```
+2. **Grant Execution Permission:** 
 Apply execution permissions to the script (required for Linux/WSL/macOS environments):
     ```bash
     chmod +x matrix.sh
     ```
 
-2.2  **Execute the Matrix:** Run the command from the root of the `ra-compat-matrix` directory:
+3. **Execute the Matrix:** Run the command from the root of the `ra-compat-matrix` directory:
     ```bash
     ./matrix.sh
     ```
