@@ -1,0 +1,29 @@
+================= [HUNTER EVIDENCE LOG] =================
+1. OS Name:       Linux
+2. Java Version:  25.0.1
+3. Groovy Ver:    5.0.3
+4. Spring Ver:    5.3.31
+5. RA Version (MANIFEST): null (expected for HEAD local snapshot)
+6. RA JAR Path:   file:/home/rspencer/.m2/repository/io/rest-assured/rest-assured/5.5.7-SNAPSHOT/rest-assured-5.5.7-SNAPSHOT.jar
+=========================================================
+>>> [HUNTER] EXECUTING TEST: SPRING BOOT 4 + RestAssured HEAD <<<
+11:22:01.938 [main] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	c.r.TestController:
+	{GET [/test]}: test()
+11:22:01.946 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 1 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+11:22:02.235 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+11:22:02.278 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+11:22:02.305 [main] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+11:22:02.305 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+11:22:02.307 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+11:22:02.308 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+11:22:02.308 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@127d7908
+11:22:02.308 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6b9c69a9
+11:22:02.308 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+11:22:02.309 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 4 ms
+11:22:02.416 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/test", parameters={}
+11:22:02.424 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.repro.TC01MockMvcHeaderCrashTest$TestController#test()
+11:22:02.446 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+11:22:02.447 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing ["OK"]
+11:22:02.451 [main] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+>>> [HUNTER] EXECUTION COMPLETED SUCCESSFULLY <<<
