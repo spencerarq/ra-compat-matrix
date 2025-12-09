@@ -67,6 +67,19 @@ Apply execution permissions to the script (required for Linux/WSL/macOS environm
 | **[1] Positive Case** | Spring Boot **2.7.18** (`javax`) + RA HEAD | **PASS** (Validates test harness reliability) | `positive.log` should show `BUILD SUCCESS` |
 | **[2] Negative Case** | Spring Boot **4.0.0-SNAPSHOT** (`jakarta`) + RA HEAD | **FAIL** (Must detect Binary Incompatibility) | `negative.log` should show `NoClassDefFoundError` |
 
+### Cross-Platform Evidence
+
+To eliminate environmental concerns, this matrix was executed across 4 different operating systems.
+
+| Platform | Status |
+| :--- | :--- |
+| **Linux** | ✅ Verified |
+| **macOS** | ✅ Verified |
+| **Windows** | ✅ Verified |
+| **WSL** | ✅ Verified |
+
+**[See full evidence logs and screenshots here](doc/EVIDENCE.md)**
+
 ### 4. Root Cause (javax vs jakarta)
 The consistent failure in the Negative Case is immediately triggered by a:
 ```bash
